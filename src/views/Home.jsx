@@ -13,6 +13,7 @@ import {
     Box,
     Grid,
 } from '@mui/material';
+import ProductCard from '../components/ProductCard';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -33,6 +34,33 @@ const Home = () => {
         });
     };
 
+    const products = [
+        {
+            name: 'Mini Orchid',
+            image: 'https://www.lego.com/cdn/cs/set/assets/bltade30768c791af76/10343_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
+            oldPrice: 'CHF34.90',
+            newPrice: '23.90 CHF',
+        },
+        {
+            name: 'Lucky Bamboo',
+            image: 'https://www.lego.com/cdn/cs/set/assets/blt5186ea8ea23f07aa/10344_Prod.png?format=webply&fit=bounds&quality=60&width=640&height=640&dpr=2',
+            oldPrice: '34.90',
+            newPrice: '21.70 CHF',
+        },
+        {
+            name: 'Plum Blossom',
+            image: 'https://www.lego.com/cdn/cs/set/assets/bltd6f8360aaf62c494/10369_Prod.png?format=webply&fit=bounds&quality=60&width=640&height=640&dpr=2',
+            oldPrice: '36.90 CHF',
+            newPrice: '20',
+        },
+        {
+            name: 'Chrysanthemum',
+            image: 'https://www.lego.com/cdn/cs/set/assets/bltdbc3129b50f61480/10368_Prod.png?format=webply&fit=bounds&quality=60&width=640&height=640&dpr=2',
+            oldPrice: '36.90 CHF',
+            newPrice: '23.70 CHF',
+        },
+    ];
+
     return (
         <>
             <Stack sx={{ alignItems: 'center' }}>
@@ -47,130 +75,16 @@ const Home = () => {
             <Stack sx={{ p: 2 }}>
                 <Typography variant="h5">Trending Sets</Typography>
                 <Grid container spacing={2}>
-                    <Grid size={{ xs: 6, md: 3 }}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                title="Mini Orchid"
-                                src="https://www.lego.com/cdn/cs/set/assets/bltade30768c791af76/10343_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+                    {products.map((product, i) => (
+                        <Grid size={{ xs: 6, md: 3 }}>
+                            <ProductCard
+                                name={product.name}
+                                image={product.image}
+                                oldPrice={product.oldPrice}
+                                newPrice={product.newPrice}
                             />
-                            <CardContent>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography variant="h6">
-                                        Mini Orchid
-                                    </Typography>
-                                    <Chip label="-31%" color="primary" />
-                                </Stack>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography
-                                        variant="body"
-                                        sx={{ textDecoration: 'line-through' }}
-                                    >
-                                        34.90 CHF
-                                    </Typography>
-                                    <Typography variant="body">
-                                        23.90 CHF
-                                    </Typography>
-                                </Stack>
-                            </CardContent>
-                            <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button variant="contained">Buy now</Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid size={{ xs: 6, md: 3 }}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                title="Mini Orchid"
-                                src="https://www.lego.com/cdn/cs/set/assets/bltade30768c791af76/10343_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
-                            />
-                            <CardContent>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography variant="h6">
-                                        Mini Orchid
-                                    </Typography>
-                                    <Chip label="-31%" color="primary" />
-                                </Stack>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography
-                                        variant="body"
-                                        sx={{ textDecoration: 'line-through' }}
-                                    >
-                                        34.90 CHF
-                                    </Typography>
-                                    <Typography variant="body">
-                                        23.90 CHF
-                                    </Typography>
-                                </Stack>
-                            </CardContent>
-                            <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button variant="contained">Buy now</Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid size={{ xs: 6, md: 3 }}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                title="Mini Orchid"
-                                src="https://www.lego.com/cdn/cs/set/assets/bltade30768c791af76/10343_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
-                            />
-                            <CardContent>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography variant="h6">
-                                        Mini Orchid
-                                    </Typography>
-                                    <Chip label="-31%" color="primary" />
-                                </Stack>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography
-                                        variant="body"
-                                        sx={{ textDecoration: 'line-through' }}
-                                    >
-                                        34.90 CHF
-                                    </Typography>
-                                    <Typography variant="body">
-                                        23.90 CHF
-                                    </Typography>
-                                </Stack>
-                            </CardContent>
-                            <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button variant="contained">Buy now</Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid size={{ xs: 6, md: 3 }}>
-                        <Card>
-                            <CardMedia
-                                component="img"
-                                title="Mini Orchid"
-                                src="https://www.lego.com/cdn/cs/set/assets/bltade30768c791af76/10343_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
-                            />
-                            <CardContent>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography variant="h6">
-                                        Mini Orchid
-                                    </Typography>
-                                    <Chip label="-31%" color="primary" />
-                                </Stack>
-                                <Stack direction="row" spacing={2}>
-                                    <Typography
-                                        variant="body"
-                                        sx={{ textDecoration: 'line-through' }}
-                                    >
-                                        34.90 CHF
-                                    </Typography>
-                                    <Typography variant="body">
-                                        23.90 CHF
-                                    </Typography>
-                                </Stack>
-                            </CardContent>
-                            <CardActions sx={{ justifyContent: 'center' }}>
-                                <Button variant="contained">Buy now</Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
+                        </Grid>
+                    ))}
                 </Grid>
             </Stack>
         </>
