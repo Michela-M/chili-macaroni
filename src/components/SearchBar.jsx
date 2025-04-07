@@ -18,15 +18,24 @@ const SearchBar = ({ onSearch }) => {
             fullWidth
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-            InputProps={{
-                endAdornment: (
-                    <InputAdornment position="end">
-                        <IconButton onClick={handleSearch} edge="end">
-                            <SearchIcon />
-                        </IconButton>
-                    </InputAdornment>
-                ),
+            onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+            slotProps={{
+                input: {
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <IconButton onClick={handleSearch} edge="end">
+                                <SearchIcon />
+                            </IconButton>
+                        </InputAdornment>
+                    ),
+                },
+            }}
+            sx={{
+                width: {
+                    xs: '90%', // small screens
+                    sm: '60%',
+                    md: '40%',
+                },
             }}
         />
     );

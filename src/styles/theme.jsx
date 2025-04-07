@@ -32,6 +32,28 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: 'Arial, sans-serif',
+        h6: {
+            fontWeight: 600,
+        },
+    },
+    components: {
+        MuiChip: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 600,
+                    color: '#00BED3',
+                    backgroundColor: '#F4F4F4',
+                    border: '2px solid #00BED3',
+                },
+            },
+        },
+        MuiButton: {
+            styleOverrides: {
+                contained: {
+                    color: '#F4F4F4',
+                },
+            },
+        },
     },
 });
 
