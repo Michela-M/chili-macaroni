@@ -1,18 +1,7 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { useNavigate } from 'react-router';
-import {
-    CardContent,
-    CardMedia,
-    Typography,
-    Card,
-    Chip,
-    CardActions,
-    Button,
-    Stack,
-    Box,
-    Grid,
-} from '@mui/material';
+import { Typography, Stack, Grid, colors } from '@mui/material';
 import ProductCard from '../components/ProductCard';
 
 const Home = () => {
@@ -63,7 +52,17 @@ const Home = () => {
 
     return (
         <>
-            <Stack sx={{ alignItems: 'center' }}>
+            <Stack
+                sx={{
+                    alignItems: 'center',
+                    backgroundImage: 'url("/images/bg.jpg")', // or use a full URL
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    color: 'white',
+                    p: 6,
+                }}
+            >
                 <Typography variant="h3" sx={{ pb: 2 }}>
                     Find your next LEGO set
                 </Typography>

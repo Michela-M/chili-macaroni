@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, IconButton, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, sx = {} }) => {
     const [query, setQuery] = useState('');
 
     const handleSearch = () => {
@@ -36,6 +36,7 @@ const SearchBar = ({ onSearch }) => {
                     sm: '60%',
                     md: '40%',
                 },
+                ...sx,
             }}
         />
     );
