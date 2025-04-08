@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
 import { useNavigate } from 'react-router';
-import { Typography, Stack, Grid, colors } from '@mui/material';
+import { Typography, Stack, Grid } from '@mui/material';
 import ProductCard from '../components/ProductCard';
 
 const Home = () => {
