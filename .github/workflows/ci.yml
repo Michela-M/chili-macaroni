@@ -29,7 +29,7 @@ jobs:
 
             - name: Run tests
               run: |
-                  npm run tests  # Run your tests using Vitest
+                  npm run test  # Run your tests using Vitest
     lint:
         runs-on: ubuntu-latest # Use the latest Ubuntu runner
 
