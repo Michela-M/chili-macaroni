@@ -26,9 +26,9 @@ export const formatPrice = (amount, currency = 'CHF') => {
 export const getDiscountPercent = (original, current) => {
     // Normalize inputs using formatPrice (but don't include currency symbol)
     const parsePrice = (price) => {
-        // Remove the currency symbol and normalize the price
-        let cleanedPrice = price.replace(/[^\d.,]/g, ''); // Allow digits and commas
-        cleanedPrice = cleanedPrice.replace(',', '.'); // Handle European comma
+        if (!price) return NaN; // or return null if you prefer
+        let cleanedPrice = price.replace(/[^\d.,]/g, '');
+        cleanedPrice = cleanedPrice.replace(',', '.');
         return parseFloat(cleanedPrice);
     };
 
