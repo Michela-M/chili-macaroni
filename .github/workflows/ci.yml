@@ -1,0 +1,51 @@
+name: Run Unit Tests
+
+# Trigger the workflow on push or pull request events
+on:
+    push:
+        branches:
+            - main # Run on commits to the main branch
+            - 'feature/*' # Run on commits to any feature branch
+    pull_request:
+        branches:
+            - main # Run on pull requests targeting the main branch
+
+jobs:
+    test:
+        runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2 # Checkout the code from the repository
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2 # Set up Node.js
+              with:
+                  node-version: '20' # Specify the Node.js version you're using (adjust if necessary)
+
+            - name: Install dependencies
+              run: |
+                  npm install  # Install your dependencies
+
+            - name: Run tests
+              run: |
+                  npm run test  # Run your tests using Vitest
+    lint:
+        runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2 # Checkout the code from the repository
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2 # Set up Node.js
+              with:
+                  node-version: '20' # Specify the Node.js version you're using (adjust if necessary)
+
+            - name: Install dependencies
+              run: |
+                  npm install  # Install your dependencies
+
+            - name: Run linter
+              run: |
+                  npm run lint  # Run your linter
