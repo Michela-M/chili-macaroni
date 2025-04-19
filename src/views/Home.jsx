@@ -16,7 +16,7 @@ const Home = () => {
             img: 'https://www.lego.com/cdn/cs/set/assets/blte32d946cf23b2e5c/21342.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
         };
 
-        navigate(`/sets/${data.id}`, {
+        navigate(`/productDetails`, {
             state: {
                 set: data,
             },

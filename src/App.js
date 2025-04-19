@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './views/Home';
 import About from './views/About';
 import theme from './styles/theme';
+import ProductDetails from './views/ProductDetails';
 import { ThemeProvider } from '@mui/material';
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
+                        <Route
+                            path="/productDetails"
+                            element={<ProductDetails />}
+                        />
                     </Routes>
                 </div>
             </Router>
