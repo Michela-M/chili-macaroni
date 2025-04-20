@@ -13,7 +13,10 @@ const Home = () => {
             id: 21342,
             name: 'The Insect Collection',
             price: 99.9,
-            img: 'https://www.lego.com/cdn/cs/set/assets/blte32d946cf23b2e5c/21342.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
+            images: [
+                'https://www.lego.com/cdn/cs/set/assets/blte25a9ccc4d363ee2/21349.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
+                'https://www.lego.com/cdn/cs/set/assets/blteeaa0fc690139b7d/21349_boxprod_v39_sha.jpg?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
+            ],
         };
 
         navigate(`/productDetails`, {
