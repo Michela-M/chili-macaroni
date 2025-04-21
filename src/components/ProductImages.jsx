@@ -12,7 +12,7 @@ const ProductImages = ({ images = [] }) => {
             {images.length > 0 ? (
                 <>
                     <ImageList
-                        sx={{ width: '10%', height: 'auto' }}
+                        sx={{ width: '20%', height: 'auto' }}
                         variant="masonry"
                         cols={1}
                         gap={24}
@@ -33,7 +33,7 @@ const ProductImages = ({ images = [] }) => {
                         src={selectedImage}
                         alt="Product"
                         style={{
-                            width: '40%',
+                            width: '80%',
                             height: 'auto',
                             objectFit: 'cover',
                         }}
