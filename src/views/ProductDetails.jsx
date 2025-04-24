@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import ProductImages from '../components/ProductImages';
-import { Typography, List, ListItem, ListItemText, Link } from '@mui/material';
+import { Typography, Stack, Button, Link, Card } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { formatPrice } from '../utils/PriceUtils';
 
@@ -16,30 +16,47 @@ const ProductPage = () => {
                 <ProductImages images={state.set.images} />
             </Grid>
             <Grid size={7}>
-                <Typography variant="h4" sx={{ marginBottom: '20px' }}>
+                <Typography variant="h5" sx={{ marginBottom: '20px' }}>
                     {state.set.name}
                 </Typography>
-                <Typography variant="h6" sx={{ marginBottom: '20px' }}>
-                    Prices:
-                </Typography>
-                <List>
-                    {state.set.price.map((store, index) => (
-                        <ListItem key={index}>
-                            <ListItemText
-                                primary={`${store.storeName}: ${formatPrice(store.price)}`}
-                                secondary={
-                                    <Link
-                                        href={store.link}
-                                        target="_blank"
-                                        rel="noopener"
-                                    >
-                                        Visit Store
-                                    </Link>
-                                }
-                            />
-                        </ListItem>
-                    ))}
-                </List>
+                <Card
+                    sx={{
+                        backgroundColor: '#EFEFEE',
+                        borderRadius: '12px',
+                        padding: '20px',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                    }}
+                >
+                    <Stack spacing={1}>
+                        {state.set.price.map((store, index) => (
+                            <Stack
+                                key={index}
+                                direction="row"
+                                alignItems="center"
+                                sx={{ columnGap: '20px' }}
+                            >
+                                <Typography fontWeight="bold">
+                                    {formatPrice(store.price)}
+                                </Typography>
+                                <Typography sx={{ flex: 1, textAlign: 'left' }}>
+                                    {store.storeName}
+                                </Typography>
+                                <Button
+                                    variant={
+                                        index === 0 ? 'contained' : 'outlined'
+                                    }
+                                    component={Link}
+                                    href={store.link}
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    Visit Store
+                                </Button>
+                            </Stack>
+                        ))}
+                    </Stack>
+                </Card>
+
                 <Typography variant="body1" sx={{ marginTop: '20px' }}>
                     {state.set.description}
                 </Typography>

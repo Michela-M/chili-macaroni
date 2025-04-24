@@ -14,13 +14,18 @@ const Home = () => {
             name: 'Orchid',
             price: [
                 {
-                    storeName: 'Store A',
-                    price: '59.90 CHF',
+                    storeName: 'Galaxus',
+                    price: '19.99',
                     link: 'https://store-a.com/product/10311',
                 },
                 {
-                    storeName: 'Store B',
-                    price: '57.50 CHF',
+                    storeName: 'Amazon.de',
+                    price: '26.00 CHF',
+                    link: 'https://store-b.com/product/10311',
+                },
+                {
+                    storeName: 'LEGO',
+                    price: '39.99 CHF',
                     link: 'https://store-b.com/product/10311',
                 },
             ],
