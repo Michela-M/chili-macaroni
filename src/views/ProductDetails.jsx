@@ -12,10 +12,10 @@ const ProductPage = () => {
 
     return (
         <Grid container spacing={2} sx={{ padding: '20px' }}>
-            <Grid size={5}>
+            <Grid size={{ xs: 12, sm: 4, md: 5, lg: 7 }}>
                 <ProductImages images={state.set.images} />
             </Grid>
-            <Grid size={7}>
+            <Grid size={{ xs: 12, sm: 8, md: 7, lg: 5 }}>
                 <Typography variant="h5" sx={{ marginBottom: '20px' }}>
                     {state.set.name}
                 </Typography>
