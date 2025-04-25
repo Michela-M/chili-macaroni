@@ -10,13 +10,32 @@ const Home = () => {
     const handleSearch = async (query) => {
         // temporary return data
         const data = {
-            id: 21342,
-            name: 'The Insect Collection',
-            price: 99.9,
-            img: 'https://www.lego.com/cdn/cs/set/assets/blte32d946cf23b2e5c/21342.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2',
+            id: 10311,
+            name: 'Orchid',
+            price: [
+                {
+                    storeName: 'Galaxus',
+                    price: '19.99',
+                    link: 'https://store-a.com/product/10311',
+                },
+                {
+                    storeName: 'Amazon.de',
+                    price: '26.00 CHF',
+                    link: 'https://store-b.com/product/10311',
+                },
+                {
+                    storeName: 'LEGO',
+                    price: '39.99 CHF',
+                    link: 'https://store-b.com/product/10311',
+                },
+            ],
+            images: [
+                'https://static01.galaxus.com/productimages/3/3/0/8/0/7/9/6/3/5/1/4/6/9/3/8/5/3/0/8ecd7efb-4ac4-4891-ba7c-8ba880020475.jpg_1440.avif',
+                'https://static01.galaxus.com/productimages/4/3/3/7/6/7/5/0/5/8/0/5/4/5/0/8/3/5/5/4fa326e3-85df-42f7-8663-64ee0e6d8f78.jpg_1440.avif',
+            ],
         };
 
-        navigate(`/sets/${data.id}`, {
+        navigate(`/productDetails`, {
             state: {
                 set: data,
             },
