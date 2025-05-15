@@ -4,6 +4,7 @@ import ProductImages from '../components/ProductImages';
 import { Typography, Stack, Button, Link, Card } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { formatPrice } from '../utils/PriceUtils';
+import { LineChart } from '@mui/x-charts/LineChart';
 
 const ProductPage = () => {
     const { state } = useLocation();
@@ -60,6 +61,43 @@ const ProductPage = () => {
                 <Typography variant="body1" sx={{ marginTop: '20px' }}>
                     {state.set.description}
                 </Typography>
+            </Grid>
+            <Grid size={12}>
+                <LineChart
+                    xAxis={[
+                        {
+                            scaleType: 'band',
+                            data: [
+                                'Jan',
+                                'Feb',
+                                'Mar',
+                                'Apr',
+                                'May',
+                                'Jun',
+                                'Jul',
+                            ],
+                        },
+                    ]}
+                    yAxis={[{ min: 0 }]}
+                    series={[
+                        {
+                            data: [20.99, 19.49, 19.99, 19.99, 19.99, 19.99],
+                            curve: 'step',
+                            label: 'Galaxus',
+                        },
+                        {
+                            data: [24.99, 25.49, 25.99, 25.75, 26.0, 26.0],
+                            curve: 'step',
+                            label: 'Amazon.de',
+                        },
+                        {
+                            data: [36.99, 37.49, 38.99, 39.5, 39.99, 39.99],
+                            curve: 'step',
+                            label: 'LEGO',
+                        },
+                    ]}
+                    height={300}
+                />
             </Grid>
         </Grid>
     );
