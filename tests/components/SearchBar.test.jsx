@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import SearchBar from '../../src/components/SearchBar'; // adjust path as necessary
-import { vi } from 'vitest'; // Import Vitest's global mocking function
+import SearchBar from '../../src/components/SearchBar';
+import { vi, expect, describe, it } from 'vitest';
 
 describe('SearchBar Component', () => {
     it('should call onSearch with the correct query when the Enter key is pressed', () => {
